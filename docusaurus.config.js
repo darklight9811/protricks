@@ -7,13 +7,13 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula")
 const config = {
 	title: "Programming Tricks",
 	tagline: "Helping developers be more efficient",
-	url: "https://your-docusaurus-test-site.com",
+	url: "https://protricks.vercel.app/",
 	baseUrl: "/",
 	onBrokenLinks: "throw",
 	onBrokenMarkdownLinks: "warn",
 	favicon: "img/favicon.ico",
 	organizationName: "darklight9811", // Usually your GitHub org/user name.
-	projectName: "tricks", // Usually your repo name.
+	projectName: "protricks", // Usually your repo name.
 
 	presets: [
 		[
@@ -21,6 +21,7 @@ const config = {
 			/** @type {import('@docusaurus/preset-classic').Options} */
 			({
 				docs: {
+					path: "docs/js",
 					routeBasePath: "/",
 					sidebarPath: require.resolve("./sidebars.js"),
 					// Please change this to your repo.
@@ -31,6 +32,18 @@ const config = {
 		],
 	],
 
+	plugins: [
+		[
+			"@docusaurus/plugin-content-docs",
+			{
+				id: "docs-ts",
+				path: "docs/ts",
+				routeBasePath: "/ts",
+				sidebarPath: require.resolve("./sidebars.js"),
+			},
+		],
+	],
+
 	themeConfig:
 		/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 		({
@@ -38,17 +51,20 @@ const config = {
 				defaultMode: "dark",
 			},
 			navbar: {
-				title: "My Site",
-				logo: {
-					alt: "My Site Logo",
-					src: "img/logo.svg",
-				},
+				title: "Protricks",
 				items: [
 					{
 						type: "doc",
 						docId: "intro",
 						position: "left",
-						label: "Tutorial",
+						label: "Javascript",
+					},
+					{
+						type: "doc",
+						docId: "intro",
+						docsPluginId: "docs-ts",
+						position: "left",
+						label: "Typescript",
 					},
 				],
 			},
@@ -61,6 +77,10 @@ const config = {
 							{
 								label: "Javascript",
 								to: "/",
+							},
+							{
+								label: "Typescript",
+								to: "/ts",
 							},
 						],
 					},

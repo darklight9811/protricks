@@ -62,14 +62,6 @@ const config = {
 								label: "Javascript",
 								to: "/",
 							},
-							{
-								label: "Typescript",
-								to: "/ts",
-							},
-							{
-								label: "React",
-								to: "/react",
-							},
 						],
 					},
 				],
